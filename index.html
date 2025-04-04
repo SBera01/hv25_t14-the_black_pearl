@@ -90,7 +90,7 @@
         <a href="#gemini" class="btn btn-primary btn-lg px-4 me-2"
           ><i class="fas fa-robot me-2"></i> Make Your Travel Plan</a
         >
-        <a href="places.html" class="btn btn-outline-light btn-lg px-4"
+        <a href="#places" class="btn btn-outline-light btn-lg px-4"
           ><i class="fas fa-map-marked-alt me-2"></i> Explore Places</a
         >
       </div>
@@ -311,6 +311,24 @@
                   <option value="nature">Nature & Wildlife</option>
                   <option value="relaxation">Relaxation & Tea Tourism</option>
                 </select>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="age-group" class="form-label">Age Group:</label>
+                <select class="form-control" id="age-group" name="age-group">
+                  <option value="">Select Age Group</option>
+                  <option value="18-25">18-25</option>
+                  <option value="26-35">26-35</option>
+                  <option value="36-50">36-50</option>
+                  <option value="50+">50+</option>
+                  <option value="family-kids">Family with Kids</option>
+                  <option value="group">Group (Friends/Colleagues)</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="budget" class="form-label">Budget (in INR):</label>
+                <input type="number" class="form-control" id="budget" name="budget" min="0" placeholder="e.g., 50000">
               </div>
             </div>
 
