@@ -1,12 +1,758 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore NB</title>
-</head>
-<body>
-    <!-- navbar section -->
-     <p>We will update it very soon</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Darjeeling Travel Guide | Personalized Itinerary Planner</title>
+    <link rel="icon" href="./logo2.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a
+          class="navbar-brand"
+          href="#"
+          style="display: flex; align-items: center; gap: 5px"
+        >
+          <img src="/logo2.png" alt="Logo" style="height: 40px" />
+          <span style="font-size: 18px">ExploreNB</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html">
+                <i class="fas fa-home me-1"></i> Home
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/guides.html">
+                <i class="fas fa-map-marked-alt me-1"></i> Guiders
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html">
+                <i class="fas fa-info-circle me-1"></i> About Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact.html">
+                <i class="fas fa-envelope me-1"></i> Contact Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link emergency-link" href="/emergency.html">
+                <i class="fas fa-phone me-1"></i> Emergency
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <h1 class="display-4 fw-bold">Discover the Magic of North Bengal</h1>
+        <p class="lead">
+          Plan your perfect trip with personalized itineraries, local insights,
+          and all the information you need for an unforgettable Himalayan
+          experience.
+        </p>
+        <a href="#gemini" class="btn btn-primary btn-lg px-4 me-2"
+          ><i class="fas fa-robot me-2"></i> Make Your Travel Plan</a
+        >
+        <a href="places.html" class="btn btn-outline-light btn-lg px-4"
+          ><i class="fas fa-map-marked-alt me-2"></i> Explore Places</a
+        >
+      </div>
+    </section>
+
+    <!-- Two div (Under hero section) -->
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="card h-100 under-hero-section travel-plan">
+              <div class="card-body text-center">
+                <h2 class="card-title travel-heading">Make your travel plan using <span class="text-danger">Explore</span> <span class="text-info">AI</span></h2>
+                <p class="card-text">Discover amazing destinations and create personalized itineraries with our intelligent travel planning tool.</p>
+                <button class="btn btn-success">Plan Your Trip</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card h-100 under-hero-section weather-alerts">
+              <div class="card-body text-center">
+                <h2 class="card-title">Weather Alerts</h2>
+                <div class="weather-alerts-content">
+                <!-- <button class="btn btn-danger">View Alerts</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Gemini Section -->
+    <section id="gemini" class="gemini-section">
+      <div class="container">
+        <h2 class="section-title">
+          Ask Gemini for Your Personalized Itinerary
+        </h2>
+        <p class="text-center mb-5">
+          Enter your travel details and let our AI assistant create the perfect
+          roadmap for your Darjeeling trip
+        </p>
+
+        <div class="gemini-card">
+          <div class="text-center">
+            <div class="gemini-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3>Plan Your Trip</h3>
+            <p class="mb-4">
+              Fill in your details to get a customized travel plan
+            </p>
+          </div>
+
+          <form id="itineraryForm">
+            <div class="row mb-3">
+              <div class="col-12">
+                <label class="form-label">Choose Destination(s):</label>
+                <div id="destination-options" class="mt-2">
+                  <div class="form-check mb-2">
+                    <input
+                      class="form-check-input destination-chk"
+                      type="checkbox"
+                      value="Darjeeling"
+                      id="dest_darjeeling"
+                    />
+                    <label class="form-check-label" for="dest_darjeeling">
+                      Darjeeling
+                    </label>
+                  </div>
+
+                  <div class="form-check mb-2">
+                    <input
+                      class="form-check-input destination-chk"
+                      type="checkbox"
+                      value="Kalimpong"
+                      id="dest_kalimpong"
+                    />
+                    <label class="form-check-label" for="dest_kalimpong">
+                      Kalimpong
+                    </label>
+                  </div>
+
+                  <div class="form-check mb-2">
+                    <input
+                      class="form-check-input destination-chk"
+                      type="checkbox"
+                      value="Dooars"
+                      id="dest_dooars"
+                    />
+                    <label class="form-check-label" for="dest_dooars">
+                      Dooars (Jaldapara/Gorumara)
+                    </label>
+                  </div>
+
+                  <div class="form-check mb-2">
+                    <input
+                      class="form-check-input destination-chk"
+                      type="checkbox"
+                      value="Siliguri"
+                      id="dest_siliguri"
+                    />
+                    <label class="form-check-label" for="dest_siliguri">
+                      Siliguri
+                    </label>
+                  </div>
+
+                  <div class="form-check mb-2">
+                    <input
+                      class="form-check-input destination-chk"
+                      type="checkbox"
+                      value="Mirik"
+                      id="dest_mirik"
+                    />
+                    <label class="form-check-label" for="dest_mirik">
+                      Mirik
+                    </label>
+                  </div>
+
+                  <div class="form-check mb-2">
+                    <input
+                      class="form-check-input destination-chk"
+                      type="checkbox"
+                      value="LavaLolegaon"
+                      id="dest_lava_lolegaon"
+                    />
+                    <label class="form-check-label" for="dest_lava_lolegaon">
+                      Lava / Lolegaon / Rishop
+                    </label>
+                  </div>
+
+                  <div class="form-check mb-2">
+                    <input
+                      class="form-check-input destination-chk"
+                      type="checkbox"
+                      value="Sandakphu"
+                      id="dest_sandakphu"
+                    />
+                    <label class="form-check-label" for="dest_sandakphu">
+                      Sandakphu / Phalut (Trekking)
+                    </label>
+                  </div>
+
+                  <div class="form-check mb-2">
+                    <input
+                      class="form-check-input destination-chk"
+                      type="checkbox"
+                      value="NorthBengalGeneral"
+                      id="dest_general"
+                    />
+                    <label class="form-check-label" for="dest_general">
+                      General North Bengal (Multiple places)
+                    </label>
+                  </div>
+
+                  <div class="form-check mb-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="Other"
+                      id="dest_other_chk"
+                    />
+                    <label class="form-check-label" for="dest_other_chk">
+                      Other (Please specify)
+                    </label>
+                  </div>
+
+                  <div
+                    id="other_destination_wrapper"
+                    class="mt-2"
+                    style="display: none"
+                  >
+                    <input
+                      type="text"
+                      class="form-control form-control-sm"
+                      id="dest_other_text"
+                      placeholder="Enter other destination(s)"
+                    />
+                  </div>
+                </div>
+                <small class="form-text text-muted mt-2 d-block"
+                  >Select all the places you're interested in visiting.</small
+                >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="startDate" class="form-label">Arrival Date</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="startDate"
+                  required
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="endDate" class="form-label">Departure Date</label>
+                <input type="date" class="form-control" id="endDate" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <label for="travelers" class="form-label"
+                  >Number of Travelers</label
+                >
+                <select class="form-select" id="travelers">
+                  <option value="1">1 person</option>
+                  <option value="2" selected>2 people</option>
+                  <option value="3">3 people</option>
+                  <option value="4">4 people</option>
+                  <option value="5+">5+ people</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="interest" class="form-label">Main Interest</label>
+                <select class="form-select" id="interest">
+                  <option value="general">General Sightseeing</option>
+                  <option value="adventure">Adventure & Trekking</option>
+                  <option value="culture">Culture & Heritage</option>
+                  <option value="nature">Nature & Wildlife</option>
+                  <option value="relaxation">Relaxation & Tea Tourism</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="specialRequests" class="form-label"
+                >Special Requests (Optional)</label
+              >
+              <textarea
+                class="form-control"
+                id="specialRequests"
+                rows="3"
+                placeholder="E.g. Senior travelers, food preferences, accessibility needs, etc."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gemini">
+              <i class="fas fa-magic me-2"></i> Generate My Itinerary
+            </button>
+
+            <div
+              class="spinner-border text-primary"
+              role="status"
+              id="loadingSpinner"
+            >
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </form>
+
+          <div class="itinerary-result" id="itineraryResult">
+            <h4><i class="fas fa-map me-2"></i> Your North Bengal Itinerary</h4>
+            <div id="itineraryContent"></div>
+            <button class="download-btn" id="downloadBtn">
+              <i class="fas fa-download me-2"></i> Download as PDF
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Header Card Section -->
+
+    <section class="container mt-5" id="places">
+      <h2
+        class="text-center d-flex justify-content-center align-items-center"
+        style="height: 10vh"
+      >
+        Top 5 Most-Visited Places in North Bengal
+      </h2>
+
+      <div class="row mt-4 text-center">
+        <div class="col-md-4">
+          <div
+            class="card shadow p-3 mb-5 bg-body-tertiary rounded"
+            style="height: 60vh"
+          >
+            <img
+              src="https://www.darjeelingriders.com/blog/wp-content/uploads/2019/07/Batasia-loop-Darjeeling.jpg"
+              class="card-img-top"
+              alt="Darjeeling"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Darjeeling</h5>
+              <p class="card-text">
+                Lost in the aroma of Darjeeling tea and the whispers of the
+                Himalayas
+              </p>
+              <a href="darjeeling.html" class="btn btn-primary">Explore More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div
+            class="card shadow p-3 mb-5 bg-body-tertiary rounded"
+            style="height: 60vh"
+          >
+            <img
+              src="https://nomadicweekends.com/blog/wp-content/uploads/2019/03/Samsing-Dooars-in-Monsoon.jpg"
+              class="card-img-top"
+              alt="Dooars"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Dooars</h5>
+              <p class="card-text">
+                The gateway to Bhutan with lush green tea gardens and wildlife
+              </p>
+              <a href="dooars.html" class="btn btn-primary">Explore More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div
+            class="card shadow p-3 mb-5 bg-body-tertiary rounded"
+            style="height: 60vh"
+          >
+            <img
+              src="https://nbstc.in/tourism/file_store/products/big/10240350121688043884dk1.jpg"
+              class="card-img-top"
+              alt="Kalimpong"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kalimpong</h5>
+              <p class="card-text">
+                A peaceful hill station with Buddhist monasteries and scenic
+                views
+              </p>
+              <a href="kalimpong.html" class="btn btn-primary">Explore More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div
+            class="card shadow p-3 mb-5 bg-body-tertiary rounded"
+            style="height: 60vh"
+          >
+            <img
+              src="https://your-image-url-here.jpg"
+              class="card-img-top"
+              alt="Gangtok"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Gangtok</h5>
+              <p class="card-text">
+                The capital city of Sikkim, blending urban life with natural
+                beauty
+              </p>
+              <a href="gangtok.html" class="btn btn-primary">Explore More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div
+            class="card shadow p-3 mb-5 bg-body-tertiary rounded"
+            style="height: 60vh"
+          >
+            <img
+              src="https://your-image-url-here.jpg"
+              class="card-img-top"
+              alt="Mirik"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Mirik</h5>
+              <p class="card-text">
+                A serene town famous for its Sumendu Lake and orange orchards
+              </p>
+              <a href="mirik.html" class="btn btn-primary">Explore More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div
+            class="card shadow p-3 mb-5 bg-body-tertiary rounded"
+            style="height: 60vh"
+          >
+            <img
+              src="https://your-image-url-here.jpg"
+              class="card-img-top"
+              alt="See More"
+            />
+            <div class="card-body">
+              <h5 class="card-title">See More</h5>
+              <p class="card-text">Discover more hidden gems of North Bengal</p>
+              <a href="#" class="btn btn-primary">Explore More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="container">
+        <h2 class="section-title">Why Use Our Travel Guide</h2>
+        <p class="text-center mb-5">
+          Everything you need for a perfect Darjeeling experience
+        </p>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-route"></i>
+              </div>
+              <h4>Smart Itineraries</h4>
+              <p>
+                Get AI-powered travel plans customized to your dates, interests,
+                and preferences for the perfect trip.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-map-marked-alt"></i>
+              </div>
+              <h4>Local Insights</h4>
+              <p>
+                Discover hidden gems and local favorites that typical tourists
+                often miss.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h4>Safety First</h4>
+              <p>
+                Access emergency contacts, safety tips, and reliable information
+                for worry-free travel.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partner Rental Section -->
+    <section id="partners" class="py-5">
+      <div class="container">
+        <div class="partner-section">
+          <h2 class="partner-title">
+            <i class="fas fa-handshake me-2"></i> Our Trusted Rental Partners
+          </h2>
+          <p class="text-center mb-5">
+            Exclusive deals and priority service for our users
+          </p>
+
+          <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="partner-card">
+                <div class="position-relative">
+                  <div class="partner-header">Himalayan Wheels</div>
+                  <div class="ribbon">15% OFF</div>
+                </div>
+                <div class="p-4">
+                  <div class="text-center mb-3">
+                    <img
+                      src="https://via.placeholder.com/150"
+                      alt="Himalayan Wheels"
+                      class="img-fluid rounded-circle"
+                      style="width: 80px; height: 80px; object-fit: cover"
+                    />
+                  </div>
+                  <h5 class="text-center">Bike & Car Rentals</h5>
+                  <p>
+                    <i class="fas fa-map-marker-alt partner-benefit me-2"></i>
+                    Darjeeling, Siliguri, Kalimpong
+                  </p>
+                  <p>
+                    <i class="fas fa-phone partner-benefit me-2"></i>
+                    <a href="tel:+919876543210">+91 98765 43210</a>
+                  </p>
+                  <p>
+                    <i class="fas fa-check-circle partner-benefit me-2"></i>
+                    <strong>Our Special Benefits:</strong>
+                  </p>
+                  <ul>
+                    <li>15% discount for our users</li>
+                    <li>Free additional driver</li>
+                    <li>24/7 roadside assistance</li>
+                    <li>Flexible pickup/drop locations</li>
+                  </ul>
+                  <button class="btn btn-outline-primary w-100 mt-2">
+                    Book Now
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="partner-card">
+                <div class="position-relative">
+                  <div class="partner-header">Dooars Adventure Rides</div>
+                  <div class="ribbon">10% OFF</div>
+                </div>
+                <div class="p-4">
+                  <div class="text-center mb-3">
+                    <img
+                      src="https://via.placeholder.com/150"
+                      alt="Dooars Adventure Rides"
+                      class="img-fluid rounded-circle"
+                      style="width: 80px; height: 80px; object-fit: cover"
+                    />
+                  </div>
+                  <h5 class="text-center">4x4 Jeep Rentals</h5>
+                  <p>
+                    <i class="fas fa-map-marker-alt partner-benefit me-2"></i>
+                    Siliguri, Malbazar, Alipurduar
+                  </p>
+                  <p>
+                    <i class="fas fa-phone partner-benefit me-2"></i>
+                    <a href="tel:+919876543211">+91 98765 43211</a>
+                  </p>
+                  <p>
+                    <i class="fas fa-check-circle partner-benefit me-2"></i>
+                    <strong>Our Special Benefits:</strong>
+                  </p>
+                  <ul>
+                    <li>10% discount for our users</li>
+                    <li>Free safari permits arrangement</li>
+                    <li>Expert driver-guides</li>
+                    <li>Custom wildlife tour packages</li>
+                  </ul>
+                  <button class="btn btn-outline-primary w-100 mt-2">
+                    Book Now
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="partner-card">
+                <div class="position-relative">
+                  <div class="partner-header">Mountain Trail Bikes</div>
+                  <div class="ribbon">20% OFF</div>
+                </div>
+                <div class="p-4">
+                  <div class="text-center mb-3">
+                    <img
+                      src="https://via.placeholder.com/150"
+                      alt="Mountain Trail Bikes"
+                      class="img-fluid rounded-circle"
+                      style="width: 80px; height: 80px; object-fit: cover"
+                    />
+                  </div>
+                  <h5 class="text-center">Premium Bike Rentals</h5>
+                  <p>
+                    <i class="fas fa-map-marker-alt partner-benefit me-2"></i>
+                    Darjeeling, Kurseong, Mirik
+                  </p>
+                  <p>
+                    <i class="fas fa-phone partner-benefit me-2"></i>
+                    <a href="tel:+919876543212">+91 98765 43212</a>
+                  </p>
+                  <p>
+                    <i class="fas fa-check-circle partner-benefit me-2"></i>
+                    <strong>Our Special Benefits:</strong>
+                  </p>
+                  <ul>
+                    <li>20% discount on Royal Enfields</li>
+                    <li>Free helmets and riding gear</li>
+                    <li>Suggested route maps</li>
+                    <li>Breakdown support network</li>
+                  </ul>
+                  <button class="btn btn-outline-primary w-100 mt-2">
+                    Book Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <h5>Darjeeling Travel Guide</h5>
+            <p>
+              Your complete guide to exploring the Queen of the Hills. Find the
+              best places to visit, eat, stay and emergency contacts for a safe
+              and memorable trip.
+            </p>
+            <div class="social-icons mt-3">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5>Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="places.html">Places to Visit</a></li>
+              <li><a href="food.html">Local Cuisine</a></li>
+              <li><a href="hotels.html">Hotels & Stays</a></li>
+              <li><a href="guides.html">Tour Guides</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5>Emergency Services</h5>
+            <ul class="footer-links">
+              <li><a href="emergency.html">Hospitals</a></li>
+              <li><a href="emergency.html">Police Stations</a></li>
+              <li><a href="emergency.html">Ambulance Services</a></li>
+              <li><a href="emergency.html">Tourist Police</a></li>
+              <li><a href="emergency.html">Helpline Numbers</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 mb-4">
+            <h5>Contact Info</h5>
+            <ul class="footer-links">
+              <li>
+                <i class="fas fa-map-marker-alt me-2"></i> Darjeeling, West
+                Bengal, India
+              </li>
+              <li>
+                <i class="fas fa-phone me-2"></i> Tourist Helpline:
+                <a href="tel:1363">1363</a>
+              </li>
+              <li>
+                <i class="fas fa-envelope me-2"></i>
+                <a href="mailto:info@darjeelingguide.com"
+                  >info@darjeelingguide.com</a
+                >
+              </li>
+              <li><i class="fas fa-clock me-2"></i> Support: 24/7 Emergency</li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          <p class="mb-0">
+            &copy; 2023 Darjeeling Travel Guide. All rights reserved. | Designed
+            with <i class="fas fa-heart text-danger"></i> for travelers
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jsPDF for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <script src="./JavaScript/script.js"></script>
+    <script type="module">
+      import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
+      window.GoogleGenerativeAI = GoogleGenerativeAI; // Make it globally accessible
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </body>
 </html>

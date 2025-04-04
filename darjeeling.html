@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Guide</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://www.darjeelingriders.com/blog/wp-content/uploads/2019/07/Batasia-loop-Darjeeling.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 30px;
+        }
+        .back{
+            content:"BACK";
+            
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 5rem;
+            height: 2rem;
+            border-radius: 2%;
+            color: #f8f9fa;
+            background:#02192d;
+            z-index: 555;
+            text-decoration: none;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.8;
+        }
+        .section-title {
+            position: relative;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .badge-custom {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .guide-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 18px;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+        
+        .guide-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.6);
+        }
+        
+        .guide-btn i {
+            margin-right: 10px;
+        }
+        
+        .modal-content {
+            border-radius: 15px;
+            border: none;
+        }
+        
+        .nav-pills .nav-link.active {
+            background-color: var(--secondary-color);
+        }
+        
+        .nav-pills .nav-link {
+            color: var(--dark-color);
+        }
+
+        
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section text-center ">
+        
+        <div><a class="back" href="index.html">BACK</a></div>
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4">Discover Darjeeling</h1>
+            <p class="lead mb-5">Explore the best foods, locations, and accommodations with local experts</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-pills mb-5 justify-content-center" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-food-tab" data-bs-toggle="pill" data-bs-target="#pills-food" type="button" role="tab">Best Foods</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-location-tab" data-bs-toggle="pill" data-bs-target="#pills-location" type="button" role="tab">Must Visit Locations</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-hotels-tab" data-bs-toggle="pill" data-bs-target="#pills-hotels" type="button" role="tab">Affordable Hotels</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-guiders-tab" data-bs-toggle="pill" data-bs-target="#pills-guiders" type="button" role="tab">Book Guiders</button>
+            </li>
+        </ul>
+   
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="pills-tabContent">
+            <!-- Best Foods Tab -->
+            <div class="tab-pane fade show active" id="pills-food" role="tabpanel">
+                <h2 class="section-title text-center">Best Local Foods</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://media-assets.swiggy.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/lsotwkhz87wf49jquq99" class="card-img-top" alt="Local Dish">
+                            <div class="card-body">
+                                <h5 class="card-title">. Momos</h5>
+                                <span class="badge badge-custom mb-2">Must Try</span>
+                                <p class="card-text">Steamed or fried dumplings filled with meat or vegetables, served with spicy chutney.                                </p>
+                                <p><i class="fas fa-map-marker-alt"></i> Old Town District</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://thumbs.dreamstime.com/b/steaming-bowl-noodle-soup-features-vibrant-vegetables-tender-meat-presenting-comforting-dish-perfect-any-meal-354753513.jpg" class="card-img-top" alt="Local Dish">
+                            <div class="card-body">
+                                <h5 class="card-title">Thukpa</h5>
+                                <span class="badge badge-custom mb-2">Local Favorite</span>
+                                <p class="card-text">A flavorful Tibetan noodle soup with vegetables, meat, and aromatic spices.</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Harbor Market</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://www.theteashelf.com/cdn/shop/articles/tea-glass-cup-wooden-table-tea-plantations-background_1024x1024.jpg?v=1679396414" class="card-img-top" alt="Local Dish">
+                            <div class="card-body">
+                                <h5 class="card-title"> Darjeeling Tea </h5>
+                                <span class="badge badge-custom mb-2">world-wide Choice</span>
+                                <p class="card-text">World-famous aromatic tea, best enjoyed at local tea estates or cafés.</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Harbor Market</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://globalvoices.org/wp-content/uploads/2019/11/ChhurpiOnSale2-800x450.jpg" class="card-img-top" alt="Local Dish">
+                            <div class="card-body">
+                                <h5 class="card-title">Churpee (Yak Cheese) & Churpee with Noodles </h5>
+                                <span class="badge badge-custom mb-2">Budget Friendly</span>
+                                <p class="card-text">Explore the vibrant street food scene with these popular snacks loved by locals and tourists alike.</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Night Market Square</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://enq69sdfnv7.exactdn.com/wp-content/uploads/2023/11/GUNDRUK-BHATMAS-CURRY-RECIPE-2.png?strip=all&lossy=1&ssl=1" class="card-img-top" alt="Local Dish">
+                            <div class="card-body">
+                                <h5 class="card-title">Gundruk & Sinki Soup</h5>
+                                <span class="badge badge-custom mb-2">Local Favorite</span>
+                                <p class="card-text">Fermented leafy green soup, a local Nepali delicacy rich in probiotics.</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Harbor Market</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OcDMlCaC3C0vdY58w1As7Ibn5V3eNFG-bg&s" class="card-img-top" alt="Local Dish">
+                            <div class="card-body">
+                                <h5 class="card-title">Sha Phaley</h5>
+                                <span class="badge badge-custom mb-2">Local Favorite</span>
+                                <p class="card-text">A crispy, deep-fried Tibetan bread stuffed with minced meat and vegetables.</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Harbor Market</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
+                </div>
+            </div>
+
+            <!-- Must Visit Locations Tab -->
+            <div class="tab-pane fade" id="pills-location" role="tabpanel">
+                <h2 class="section-title text-center">Must Visit Locations</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://stylerug.net/wp-content/uploads/2024/09/HMI-Darjeeling-Harstuff-Travel-2-2.jpg" class="card-img-top" alt="Location">
+                            <div class="card-body">
+                                <h5 class="card-title">Tiger Hill</h5>
+                                <span class="badge badge-custom mb-2">Scenic View</span>
+                                <p class="card-text">Famous for its sunrise view over Mt. Kanchenjunga and the Himalayas.</p>
+                                <p class="card-text">Best visited early morning (around 4 AM).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://darjeelingkalimpongtourism.com/wp-content/uploads/2021/05/Darjeeling-toy-train-in-Batasia-loop.jpg" class="card-img-top" alt="Location">
+                        <div class="card-body">
+                            <h5 class="card-title">Batasia Loop & War Memorial</h5>
+                            <span class="badge badge-custom mb-2">Cultural</span>
+                            <p class="card-text">A scenic railway loop with a garden and a memorial for Gorkha soldiers.
+                            </p>
+                             <p class="card-text"> Offers great views of Darjeeling’s toy train.</p>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Toy_Train_of_Darjeeling.jpg" class="card-img-top" alt="Location">
+                            <div class="card-body">
+                                <h5 class="card-title">Darjeeling Himalayan Railway</h5>
+                                <span class="badge badge-custom mb-2">Adventure</span>
+                                <p class="card-text">A UNESCO World Heritage Site, this charming narrow-gauge train offers breathtaking views.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/fc/fe/ed/japanese-peace-pagoda.jpg?w=1200&h=1200&s=1" class="card-img-top" alt="Location">
+                            <div class="card-body">
+                                <h5 class="card-title">Peace Pagoda</h5>
+                                <span class="badge badge-custom mb-2">Adventure</span>
+                                <p class="card-text">A beautiful white stupa promoting peace, offering panoramic views of Darjeeling.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://www.clubmahindra.com/storage/app/media/Non%20Managed%20Resorts/Summit%20Hermon%20Darjeeling/Tour%20of%20Happy%20Valley%20Tea%20Estate.jpg
+" class="card-img-top" alt="Location">
+                            <div class="card-body">
+                                <h5 class="card-title"> Tea Gardens (Happy Valley Tea Estate)</h5>
+                                <span class="badge badge-custom mb-2">Adventure</span>
+                                <p class="card-text">Visit a tea estate to see how Darjeeling tea is made and enjoy a fresh brew.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://www.trawell.in/admin/images/upload/646902946Darjeeling_Ghoom_Monastery_Main.jpg" class="card-img-top" alt="Location">
+                            <div class="card-body">
+                                <h5 class="card-title">Ghoom Monastery</h5>
+                                <span class="badge badge-custom mb-2">Adventure</span>
+                                <p class="card-text">One of the oldest Tibetan Buddhist monasteries in Darjeeling.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://www.shutterstock.com/image-photo/march-18-2023-evening-view-600nw-2281340227.jpg" class="card-img-top" alt="Location">
+                            <div class="card-body">
+                                <h5 class="card-title"> Darjeeling Mall (Chowrasta)</h5>
+                                <span class="badge badge-custom mb-2">Adventure</span>
+                                <p class="card-text">One of the oldest Tibetan Buddhist monasteries in Darjeeling.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- affordable Hotels Tab -->
+             <div class="tab-pane fade" id="pills-hotels" role="tabpanel">
+                <h2 class="section-title text-center">Affordable Hotels</h2>
+                <div class="row">
+
+                    <!--hotel01-->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://stylerug.net/wp-content/uploads/2024/09/HMI-Darjeeling-Harstuff-Travel-2-2.jpg" class="card-img-top" alt="Location">
+                            <div class="card-body">
+                                <h5 class="card-title">Mayfair Darjeeling</h5>
+                               
+                                <pre>
+   
+     Location: The Mall, Darjeeling 
+     (Near Chowrasta)
+
+     Price: ₹12,000 – ₹20,000 per night
+
+Amenities:
+✅ Luxury spa & wellness center
+✅ Colonial-style rooms with fireplaces
+✅ Multi-cuisine restaurant
+✅ Free WiFi & parking
+
+Why Stay? Best for heritage luxury with 
+mountain views.
+                                </pre>
+                            
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--hotel02-->
+                    
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://stylerug.net/wp-content/uploads/2024/09/HMI-Darjeeling-Harstuff-Travel-2-2.jpg" class="card-img-top" alt="Location">
+                            <div class="card-body">
+                                <h5 class="card-title">Hotel Lunar Darjeeling</h5>
+                                <pre>
+    Price: ₹1,800 – ₹3,500/night 
+    Location: Laden La Road 
+    (5-min walk to Mall Road)
+
+
+ ✅ great budget option.
+ ✅ Colonial-style rooms with fireplaces
+ ✅ Multi-cuisine restaurant
+ 
+ Why Stay? Clean rooms with valley views.
+
+ 
+ Amenities: Free WiFi, hot water, 
+ 24/7 front desk.
+                            </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--hotel03-->
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://stylerug.net/wp-content/uploads/2024/09/HMI-Darjeeling-Harstuff-Travel-2-2.jpg" class="card-img-top" alt="Location">
+                            <div class="card-body">
+                                <h5 class="card-title">Tiger Hill</h5>
+                                <span class="badge badge-custom mb-2">Scenic View</span>
+                                <p class="card-text">Famous for its sunrise view over Mt. Kanchenjunga and the Himalayas.</p>
+                                <p class="card-text">Best visited early morning (around 4 AM).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--hotel04-->
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://stylerug.net/wp-content/uploads/2024/09/HMI-Darjeeling-Harstuff-Travel-2-2.jpg" class="card-img-top" alt="Location">
+                            <div class="card-body">
+                                <h5 class="card-title">Tiger Hill</h5>
+                                <span class="badge badge-custom mb-2">Scenic View</span>
+                                <p class="card-text">Famous for its sunrise view over Mt. Kanchenjunga and the Himalayas.</p>
+                                <p class="card-text">Best visited early morning (around 4 AM).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--hotel05-->
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://stylerug.net/wp-content/uploads/2024/09/HMI-Darjeeling-Harstuff-Travel-2-2.jpg" class="card-img-top" alt="Location">
+                            <div class="card-body">
+                                <h5 class="card-title">Tiger Hill</h5>
+                                <span class="badge badge-custom mb-2">Scenic View</span>
+                                <p class="card-text">Famous for its sunrise view over Mt. Kanchenjunga and the Himalayas.</p>
+                                <p class="card-text">Best visited early morning (around 4 AM).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    
+                </div>
+            </div> 
+               
+
+
+
+
+
+
+ 
+
+
+
+
+     <!--guiders section-->
+     <div class="tab-pane fade" id="pills-guiders" role="tabpanel">
+        <h2 class="section-title text-center">Connect with your local guiders</h2>
+        <div class="row d-flex justify-content-center align-items-center">
+
+            <div class="col-lg-3 p-3 mb-2">
+                <div class="card">
+                    <img src="https://c8.alamy.com/comp/2KG7RYY/flat-vector-icon-profile-face-user-avatar-2KG7RYY.jpg" class="card-img-top img-fluid w-100 background-size: cover; background-position:cover ;" alt="Hotel">
+                    <div class="card-body">
+                        <h5 class="card-title">Angel Gurung</h5>
+                        <!-- <span class="badge badge-custom mb-2"></span> -->
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing eas, incidunt voluptatibus asperiores delectus maiores pariatur magni obcaecati quod libero!</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Seaside Blvd</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 m-3 p-3 mb-2">
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjDGXkfm11FALWSX_JiTWcHA5r5fXa0i2XlubohpZM8C02-RKPdb-ikBG8De6AEKp8cnQ&usqp=CAU" class="card-img-top img-fluid w-100 background-size: cover; background-position:cover ;" alt="Hotel">
+                    <div class="card-body">
+                        <h5 class="card-title">Angel Gurung</h5>
+                        <!-- <span class="badge badge-custom mb-2"></span> -->
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptaunt voluptatibus asperiores delectus maiores  magni obcaecati quod libero!</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Seaside Blvd</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 m-3 p-3 mb-2">
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjDGXkfm11FALWSX_JiTWcHA5r5fXa0i2XlubohpZM8C02-RKPdb-ikBG8De6AEKp8cnQ&usqp=CAU" class="card-img-top img-fluid w-100 background-size: cover; background-position:cover ;" alt="Hotel">
+                    <div class="card-body">
+                        <h5 class="card-title">Angel Gurung</h5>
+                        <!-- <span class="badge badge-custom mb-2"></span> -->
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur obis eveniet ex vero! Tempora esse, natus voluptas, incidunt voluptatibus asperiores delectus maimagni obcaecati quod libero!</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Seaside Blvd</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 m-3 p-3 mb-2">
+                <div class="card">
+                    <img src="https://c8.alamy.com/comp/2KG7RYY/flat-vector-icon-profile-face-user-avatar-2KG7RYY.jpg" class="card-img-top img-fluid w-100 background-size: cover; background-position:cover ;" alt="Hotel">
+                    <div class="card-body">
+                        <h5 class="card-title">Angel Gurung</h5>
+                        <!-- <span class="badge badge-custom mb-2"></span> -->
+                        <p class="card-text">Lorem ipsum dolor sit, amet conses eveniet ex vero! Tempora esse, natus voluptas, incidunt voluptatibus asperiores delectus maiores pariatur magni obcaecati quod libero!</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Seaside Blvd</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 m-3 p-3 mb-2">
+                <div class="card">
+                    <img src="https://c8.alamy.com/comp/2KG7RYY/flat-vector-icon-profile-face-user-avatar-2KG7RYY.jpg" class="card-img-top img-fluid w-100 background-size: cover; background-position:cover ;" alt="Hotel">
+                    <div class="card-body">
+                        <h5 class="card-title">Angel Gurung</h5>
+                        <!-- <span class="badge badge-custom mb-2"></span> -->
+                        <p class="card-text">Lorem ipsum dolor sit, amet conses eveniet ex vero! Tempora esse, natus voluptas, incidunt voluptatibus asperiores delectus maiores pariatur magni obcaecati quod libero!</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Seaside Blvd</p>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+        </div>
+    </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">© 2023 Travel Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Handle guide request form submission
+        document.getElementById('submitGuideRequest').addEventListener('click', function() {
+            // In a real application, you would send this data to a server
+            // For this demo, we'll just show a success message
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            // Validate required fields
+            if (!name || !email) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            // Show success toast
+            const toast = new bootstrap.Toast(document.getElementById('successToast'));
+            toast.show();
+            
+            // Close the modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('guideModal'));
+            modal.hide();
+            
+            // Reset form
+            document.getElementById('guideForm').reset();
+        });
+        
+        // Initialize tooltips
+        document.addEventListener('DOMContentLoaded', function() {
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+</body>
+</html>
