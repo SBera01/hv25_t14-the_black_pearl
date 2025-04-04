@@ -350,140 +350,96 @@
       </div>
     </section>
 
-    <!-- Header Card Section -->
 
-    <section class="container mt-5" id="places">
-      <h2
-        class="text-center d-flex justify-content-center align-items-center"
-        style="height: 10vh"
-      >
-        Top 5 Most-Visited Places in North Bengal
-      </h2>
-
-      <div class="row mt-4 text-center">
-        <div class="col-md-4">
-          <div
-            class="card shadow p-3 mb-5 bg-body-tertiary rounded"
-            style="height: 60vh"
-          >
-            <img
-              src="https://www.darjeelingriders.com/blog/wp-content/uploads/2019/07/Batasia-loop-Darjeeling.jpg"
-              class="card-img-top"
-              alt="Darjeeling"
-            />
-            <div class="card-body">
+ <!-- Header Card Section -->
+<section class="container mt-5" id="places">
+    <h2 class="text-center fw-bold mb-4">
+      Top 5 Most-Visited Places in North Bengal
+    </h2>
+  
+    <div class="row g-4">
+      <!-- Card Template -->
+      <div class="col-md-4" style="display: flex;">
+        <div class="card shadow-sm w-100 rounded-4 h-100">
+          <img src="https://www.darjeelingriders.com/blog/wp-content/uploads/2019/07/Batasia-loop-Darjeeling.jpg" class="card-img-top object-fit-cover" alt="Darjeeling" style="height: 200px; object-fit: cover;" />
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
               <h5 class="card-title">Darjeeling</h5>
-              <p class="card-text">
-                Lost in the aroma of Darjeeling tea and the whispers of the
-                Himalayas
-              </p>
-              <a href="darjeeling.html" class="btn btn-primary">Explore More</a>
+              <p class="card-text">Lost in the aroma of Darjeeling tea and the whispers of the Himalayas</p>
             </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div
-            class="card shadow p-3 mb-5 bg-body-tertiary rounded"
-            style="height: 60vh"
-          >
-            <img
-              src="https://nomadicweekends.com/blog/wp-content/uploads/2019/03/Samsing-Dooars-in-Monsoon.jpg"
-              class="card-img-top"
-              alt="Dooars"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Dooars</h5>
-              <p class="card-text">
-                The gateway to Bhutan with lush green tea gardens and wildlife
-              </p>
-              <a href="dooars.html" class="btn btn-primary">Explore More</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div
-            class="card shadow p-3 mb-5 bg-body-tertiary rounded"
-            style="height: 60vh"
-          >
-            <img
-              src="https://nbstc.in/tourism/file_store/products/big/10240350121688043884dk1.jpg"
-              class="card-img-top"
-              alt="Kalimpong"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Kalimpong</h5>
-              <p class="card-text">
-                A peaceful hill station with Buddhist monasteries and scenic
-                views
-              </p>
-              <a href="kalimpong.html" class="btn btn-primary">Explore More</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div
-            class="card shadow p-3 mb-5 bg-body-tertiary rounded"
-            style="height: 60vh"
-          >
-            <img
-              src="https://your-image-url-here.jpg"
-              class="card-img-top"
-              alt="Gangtok"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Gangtok</h5>
-              <p class="card-text">
-                The capital city of Sikkim, blending urban life with natural
-                beauty
-              </p>
-              <a href="gangtok.html" class="btn btn-primary">Explore More</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div
-            class="card shadow p-3 mb-5 bg-body-tertiary rounded"
-            style="height: 60vh"
-          >
-            <img
-              src="https://your-image-url-here.jpg"
-              class="card-img-top"
-              alt="Mirik"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Mirik</h5>
-              <p class="card-text">
-                A serene town famous for its Sumendu Lake and orange orchards
-              </p>
-              <a href="mirik.html" class="btn btn-primary">Explore More</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div
-            class="card shadow p-3 mb-5 bg-body-tertiary rounded"
-            style="height: 60vh"
-          >
-            <img
-              src="https://your-image-url-here.jpg"
-              class="card-img-top"
-              alt="See More"
-            />
-            <div class="card-body">
-              <h5 class="card-title">See More</h5>
-              <p class="card-text">Discover more hidden gems of North Bengal</p>
-              <a href="#" class="btn btn-primary">Explore More</a>
-            </div>
+            <a href="darjeeling.html" class="btn btn-primary mt-2">Explore More</a>
           </div>
         </div>
       </div>
-    </section>
-
+  
+      <!-- Repeat for each place -->
+      <div class="col-md-4" style="display: flex;">
+        <div class="card shadow-sm w-100 rounded-4 h-100">
+          <img src="https://nomadicweekends.com/blog/wp-content/uploads/2019/03/Samsing-Dooars-in-Monsoon.jpg" class="card-img-top" alt="Dooars" style="height: 200px; object-fit: cover;" />
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title">Dooars</h5>
+              <p class="card-text">The gateway to Bhutan with lush green tea gardens and wildlife</p>
+            </div>
+            <a href="dooars.html" class="btn btn-primary mt-2">Explore More</a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4" style="display: flex;">
+        <div class="card shadow-sm w-100 rounded-4 h-100">
+          <img src="https://nbstc.in/tourism/file_store/products/big/10240350121688043884dk1.jpg" class="card-img-top" alt="Kalimpong" style="height: 200px; object-fit: cover;" />
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title">Kalimpong</h5>
+              <p class="card-text">A peaceful hill station with Buddhist monasteries and scenic views</p>
+            </div>
+            <a href="kalimpong.html" class="btn btn-primary mt-2">Explore More</a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4" style="display: flex;">
+        <div class="card shadow-sm w-100 rounded-4 h-100">
+          <img src="gangtok.jpg" class="card-img-top" alt="Gangtok" style="height: 200px; object-fit: cover;" />
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title">Gangtok</h5>
+              <p class="card-text">The capital city of Sikkim, blending urban life with natural beauty</p>
+            </div>
+            <a href="gangtok.html" class="btn btn-primary mt-2">Explore More</a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4" style="display: flex;">
+        <div class="card shadow-sm w-100 rounded-4 h-100">
+          <img src="mirik.jpg" class="card-img-top" alt="Mirik" style="height: 200px; object-fit: cover;" />
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title">Mirik</h5>
+              <p class="card-text">A serene town famous for its Sumendu Lake and orange orchards</p>
+            </div>
+            <a href="mirik.html" class="btn btn-primary mt-2">Explore More</a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4" style="display: flex;">
+        <div class="card shadow-sm w-100 rounded-4 h-100">
+          <img src="https://your-image-url-here.jpg" class="card-img-top" alt="See More" style="height: 200px; object-fit: cover;" />
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title">See More</h5>
+              <p class="card-text">Discover more hidden gems of North Bengal</p>
+            </div>
+            <a href="#" class="btn btn-primary mt-2">Explore More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
     <!-- Features Section -->
     <section class="features-section">
       <div class="container">
