@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const { GoogleGenerativeAI } = window;
       genAI = new GoogleGenerativeAI(YOUR_API_KEY);
       model = genAI.getGenerativeModel({ model: MODEL_NAME });
-      console.log("Gemini AI Initialized.");
+      console.log("Gemini AI Initialized and Ready.");
     } catch (error) {
       console.error("Error initializing GoogleGenerativeAI:", error);
       alert(
