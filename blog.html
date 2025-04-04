@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Vlogs - Explore Destinations</title>
+    
+    <link rel="icon" href="./logo2.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+        .vlog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #333;
+        }
+        
+        .destination-section {
+            margin-bottom: 60px;
+        }
+        
+        .destination-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .vlog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .video-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 aspect ratio */
+            overflow: hidden;
+        }
+        
+        .video-thumbnail iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-info {
+            padding: 15px;
+        }
+        
+        .video-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        
+        .video-creator {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+    </style>
+
+  </head>
+  <body>
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a
+          class="navbar-brand"
+          href="#"
+          style="display: flex; align-items: center; gap: 5px"
+        >
+          <img src="/logo2.png" alt="Logo" style="height: 40px" />
+          <span style="font-size: 18px">ExploreNB</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html">
+                <i class="fas fa-home me-1"></i> Home
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/guides.html">
+                <i class="fas fa-map-marked-alt me-1"></i> Guiders
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html">
+                <i class="fas fa-info-circle me-1"></i> About Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact.html">
+                <i class="fas fa-envelope me-1"></i> Contact Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link emergency-link" href="/emergency.html">
+                <i class="fas fa-phone me-1"></i> Emergency
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!---hero section-->
+        <!-- Hero Section -->
+        <section class="guide-hero">
+            <div class="container">
+              <h1 class="display-4 fw-bold mb-4">Become a Certified Local Guide</h1>
+              <p class="lead mb-5">
+                Share your knowledge of Darjeeling and North Bengal with travelers
+                from around the world and earn money doing what you love
+              </p>
+              <a href="#registration" class="btn btn-warning btn-lg px-4"
+                ><i class="fas fa-user-check me-2"></i> Apply Now</a
+              >
+            </div>
+          </section>
+      
+          <!-- Registration Form -->
+          <section id="registration" class="py-5">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 mx-auto">
+                  <div class="guide-form-container">
+                    <h2 class="text-center mb-4">Guide Registration Form</h2>
+                    <p class="text-center mb-5">
+                      Fill out this form to join our network of trusted local guides
+                    </p>
+      
+                    <form id="guideRegistrationForm">
+                      <!-- Personal Information -->
+                      <h4 class="form-section-title">
+                        <i class="fas fa-user me-2"></i> Personal Information
+                      </h4>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label for="fullName" class="form-label">Full Name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="fullName"
+                            required
+                          />
+                        </div>
+                        <div class="col-md-6">
+                          <label for="email" class="form-label">Email Address</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            required
+                          />
+                        </div>
+                      </div>
+      
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label for="phone" class="form-label">Phone Number</label>
+                          <input
+                            type="tel"
+                            class="form-control"
+                            id="phone"
+                            required
+                          />
+                        </div>
+                        <div class="col-md-6">
+                          <label for="age" class="form-label">Age</label>
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="age"
+                            min="18"
+                            required
+                          />
+                        </div>
+                      </div>
+      
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label for="gender" class="form-label">Gender</label>
+                          <select class="form-select" id="gender" required>
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="language" class="form-label"
+                            >Languages Spoken</label
+                          >
+                          <select class="form-select" id="language" multiple required>
+                            <option value="english">English</option>
+                            <option value="hindi">Hindi</option>
+                            <option value="nepali">Nepali</option>
+                            <option value="bengali">Bengali</option>
+                            <option value="tibetan">Tibetan</option>
+                            <option value="other">Other</option>
+                          </select>
+                          <small class="text-muted"
+                            >Hold Ctrl/Cmd to select multiple</small
+                          >
+                        </div>
+                      </div>
+      
+                      <!-- Guide Information -->
+                      <h4 class="form-section-title mt-5">
+                        <i class="fas fa-id-card me-2"></i> Guide Information
+                      </h4>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label for="experience" class="form-label"
+                            >Years of Experience</label
+                          >
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="experience"
+                            min="0"
+                            required
+                          />
+                        </div>
+                        <div class="col-md-6">
+                          <label for="areas" class="form-label"
+                            >Areas You Can Guide</label
+                          >
+                          <select class="form-select" id="areas" multiple required>
+                            <option value="darjeeling">Darjeeling</option>
+                            <option value="kalimpong">Kalimpong</option>
+                            <option value="mirik">Mirik</option>
+                            <option value="dooars">Dooars</option>
+                            <option value="siliguri">Siliguri</option>
+                            <option value="sikkim">Sikkim</option>
+                          </select>
+                          <small class="text-muted"
+                            >Hold Ctrl/Cmd to select multiple</small
+                          >
+                        </div>
+                      </div>
+      
+                      <div class="mb-3">
+                        <label for="specialization" class="form-label"
+                          >Specialization</label
+                        >
+                        <select class="form-select" id="specialization" required>
+                          <option value="">Select your specialty</option>
+                          <option value="history">History & Culture</option>
+                          <option value="nature">Nature & Wildlife</option>
+                          <option value="adventure">Adventure & Trekking</option>
+                          <option value="food">Food & Culinary</option>
+                          <option value="photography">Photography Tours</option>
+                          <option value="spiritual">Spiritual & Religious</option>
+                        </select>
+                      </div>
+      
+                      <div class="mb-3">
+                        <label for="bio" class="form-label"
+                          >Short Bio/Introduction</label
+                        >
+                        <textarea
+                          class="form-control"
+                          id="bio"
+                          rows="3"
+                          required
+                          placeholder="Tell travelers about yourself and your guiding style"
+                        ></textarea>
+                      </div>
+      
+                      <!-- Document Upload -->
+                      <h4 class="form-section-title mt-5">
+                        <i class="fas fa-file-upload me-2"></i> Required Documents
+                      </h4>
+                      <p class="text-muted mb-3">
+                        Please upload clear scans/photos of the following documents
+                      </p>
+      
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label class="form-label">Government ID Proof</label>
+                          <div
+                            class="file-upload"
+                            onclick="document.getElementById('idProof').click()"
+                          >
+                            <input
+                              type="file"
+                              id="idProof"
+                              accept="image/*,.pdf"
+                              style="display: none"
+                              required
+                            />
+                            <i class="fas fa-id-badge"></i>
+                            <p>Upload Aadhar Card, Passport, or Voter ID</p>
+                            <small>Max file size: 5MB (JPEG, PNG, PDF)</small>
+                            <div class="file-name" id="idProofName"></div>
+                          </div>
+                        </div>
+      
+                        <div class="col-md-6 mb-3">
+                          <label class="form-label">Address Proof</label>
+                          <div
+                            class="file-upload"
+                            onclick="document.getElementById('addressProof').click()"
+                          >
+                            <input
+                              type="file"
+                              id="addressProof"
+                              accept="image/*,.pdf"
+                              style="display: none"
+                              required
+                            />
+                            <i class="fas fa-home"></i>
+                            <p>Upload Utility Bill or Rental Agreement</p>
+                            <small>Max file size: 5MB (JPEG, PNG, PDF)</small>
+                            <div class="file-name" id="addressProofName"></div>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label class="form-label">Guide Certificate (if any)</label>
+                          <div
+                            class="file-upload"
+                            onclick="document.getElementById('certificate').click()"
+                          >
+                            <input
+                              type="file"
+                              id="certificate"
+                              accept="image/*,.pdf"
+                              style="display: none"
+                            />
+                            <i class="fas fa-award"></i>
+                            <p>Upload any guiding certifications</p>
+                            <small>Max file size: 5MB (JPEG, PNG, PDF)</small>
+                            <div class="file-name" id="certificateName"></div>
+                          </div>
+                        </div>
+      
+                        <div class="col-md-6 mb-3">
+                          <label class="form-label">Profile Photo</label>
+                          <div
+                            class="file-upload"
+                            onclick="document.getElementById('profilePhoto').click()"
+                          >
+                            <input
+                              type="file"
+                              id="profilePhoto"
+                              accept="image/*"
+                              style="display: none"
+                              required
+                            />
+                            <i class="fas fa-camera"></i>
+                            <p>Upload a clear headshot</p>
+                            <small>Max file size: 2MB (JPEG, PNG)</small>
+                            <div class="file-name" id="profilePhotoName"></div>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <!-- Terms and Submit -->
+                      <div class="form-check mb-4">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="terms"
+                          required
+                        />
+                        <label class="form-check-label" for="terms">
+                          I agree to the
+                          <a
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#termsModal"
+                            >Terms of Service</a
+                          >
+                          and confirm that all information provided is accurate
+                        </label>
+                      </div>
+      
+                      <button type="submit" class="btn btn-guide">
+                        <i class="fas fa-paper-plane me-2"></i> Submit Application
+                      </button>
+                    </form>
+      
+                    <!-- Verification Process -->
+                    <div class="verification-process mt-5">
+                      <h5>
+                        <i class="fas fa-clipboard-check me-2"></i> Verification
+                        Process
+                      </h5>
+                      <div class="process-step">
+                        <div class="process-step-number">1</div>
+                        <p>
+                          <strong>Application Review:</strong> Our team will review
+                          your application within 3-5 business days
+                        </p>
+                      </div>
+                      <div class="process-step">
+                        <div class="process-step-number">2</div>
+                        <p>
+                          <strong>Interview:</strong> Shortlisted candidates will have
+                          a short interview (phone/video)
+                        </p>
+                      </div>
+                      <div class="process-step">
+                        <div class="process-step-number">3</div>
+                        <p>
+                          <strong>Background Check:</strong> We verify all submitted
+                          documents and information
+                        </p>
+                      </div>
+                      <div class="process-step">
+                        <div class="process-step-number">4</div>
+                        <p>
+                          <strong>Approval:</strong> Successful applicants will
+                          receive guide credentials and training materials
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-lg-4">
+                  <!-- Benefits Section -->
+                  <div class="benefits-section">
+                    <h4 class="text-center mb-4">
+                      <i class="fas fa-star me-2"></i> Why Join Us?
+                    </h4>
+                    <div class="benefit-item">
+                      <i class="fas fa-rupee-sign"></i>
+                      <strong>Earn Competitive Rates:</strong> Set your own prices and
+                      keep 80% of your earnings
+                    </div>
+                    <div class="benefit-item">
+                      <i class="fas fa-users"></i>
+                      <strong>Reach More Travelers:</strong> Get visibility to
+                      thousands of potential clients
+                    </div>
+                    <div class="benefit-item">
+                      <i class="fas fa-shield-alt"></i>
+                      <strong>Insurance Coverage:</strong> All our guides get accident
+                      insurance coverage
+                    </div>
+                    <div class="benefit-item">
+                      <i class="fas fa-graduation-cap"></i>
+                      <strong>Free Training:</strong> Access to our guide training
+                      resources and workshops
+                    </div>
+                    <div class="benefit-item">
+                      <i class="fas fa-calendar-check"></i>
+                      <strong>Flexible Schedule:</strong> Work when you want - full
+                      time or part time
+                    </div>
+                    <div class="benefit-item">
+                      <i class="fas fa-medal"></i>
+                      <strong>Certification:</strong> Get our official "Certified
+                      Local Guide" badge
+                    </div>
+                  </div>
+      
+                  <!-- Support Info -->
+                  <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body text-center">
+                      <i
+                        class="fas fa-headset text-primary mb-3"
+                        style="font-size: 2rem"
+                      ></i>
+                      <h5>Need Help?</h5>
+                      <p class="mb-2">
+                        Our support team is here to assist you with the application
+                        process
+                      </p>
+                      <a
+                        href="mailto:guides@darjeeling.com"
+                        class="btn btn-outline-primary btn-sm"
+                      >
+                        <i class="fas fa-envelope me-1"></i> Email Us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+    <!---end of navbar section-->
+    <div class="vlog-container">
+        <h1 class="section-title">Travel Vlogs</h1>
+        
+        <!-- Bali Destination -->
+        <div class="destination-section">
+            <h2 class="destination-title">Bali, Indonesia</h2>
+            <div class="vlog-grid">
+                <!-- Video Card 1 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/6s0r6QZq6k4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">BALI TRAVEL GUIDE: 10 Best Places to Visit</h3>
+                        <p class="video-creator">The Planet D</p>
+                    </div>
+                </div>
+                
+                <!-- Video Card 2 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/CM4YDarv0wE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Bali in 8K ULTRA HD - Relaxing Music Along With Beautiful Nature</h3>
+                        <p class="video-creator">8K VIDEOS ULTRA HD</p>
+                    </div>
+                </div>
+                
+                <!-- Video Card 3 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/ooX1z4x19w4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">BALI: 3 Week Itinerary - Best Things To Do</h3>
+                        <p class="video-creator">Eva zu Beck</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Japan Destination -->
+        <div class="destination-section">
+            <h2 class="destination-title">Japan</h2>
+            <div class="vlog-grid">
+                <!-- Video Card 1 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/ailHY7YjY0A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Japan Travel Guide - Best Places to Visit</h3>
+                        <p class="video-creator">Ryan Shirley</p>
+                    </div>
+                </div>
+                
+                <!-- Video Card 2 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/rcm3hdc8X6w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">10 Days in Japan: A Complete Travel Itinerary</h3>
+                        <p class="video-creator">Paolo fromTOKYO</p>
+                    </div>
+                </div>
+                
+                <!-- Video Card 3 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/3NaRuvZq7XQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Japan's Hidden Gems: Off the Beaten Path</h3>
+                        <p class="video-creator">Abroad in Japan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Paris Destination -->
+        <div class="destination-section">
+            <h2 class="destination-title">Paris, France</h2>
+            <div class="vlog-grid">
+                <!-- Video Card 1 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/QbJKr1S5XTQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Paris in 4K - The City of Love</h3>
+                        <p class="video-creator">Around The World 4K</p>
+                    </div>
+                </div>
+                
+                <!-- Video Card 2 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/Vl4nN2lW5mY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">How to Spend 3 Days in PARIS</h3>
+                        <p class="video-creator">Travel Spots</p>
+                    </div>
+                </div>
+                
+                <!-- Video Card 3 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/zdQmuBbZ_7E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Hidden Paris: Secret Spots Most Tourists Miss</h3>
+                        <p class="video-creator">The New Travel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
