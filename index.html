@@ -64,8 +64,8 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/about.html">
-                <i class="fas fa-info-circle me-1"></i> About Us
+              <a class="nav-link" href="/community.html">
+                <i class="fas fa-info-circle me-1"></i> Community
               </a>
             </li>
             <li class="nav-item">
@@ -84,6 +84,11 @@
     </nav>
 
     <!-- Hero Section -->
+
+
+
+
+    
     <section class="hero-section">
       <div class="container">
         <h1 class="display-4 fw-bold">Discover the Magic of North Bengal</h1>
@@ -92,7 +97,7 @@
           and all the information you need for an unforgettable Himalayan
           experience.
         </p>
-        <a href="#gemini" class="btn btn-primary btn-lg px-4 me-2"
+        <a href="gemini.html" class="btn btn-primary btn-lg px-4 me-2"
           ><i class="fas fa-robot me-2"></i> Make Your Travel Plan</a
         >
         <a href="#places" class="btn btn-outline-light btn-lg px-4"
@@ -101,15 +106,23 @@
       </div>
     </section>
 
+
+
+
+
+
+
     <!-- Two div (Under hero section) -->
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
-          <div class="col-md-6 shadow-lg p-2 mb-5 bg-body-tertiary rounded">
+          <div class="col-md-6 shadow-lg p-2  mb-5 bg-body-tertiary rounded">
             <div class="card h-100 under-hero-section travel-plan">
-              <div class="card-body text-center">
+              <div class="card-body text-center ">
                 <h2 class="card-title travel-heading">Make your travel plan using <span class="text-danger">Explore</span> <span class="text-info">AI</span></h2>
-                <p class="card-text">Discover amazing destinations and create personalized itineraries with our intelligent travel planning tool.</p>
-                <button class="btn btn-success">Plan Your Trip</button>
+                <p class="card-text">Can't decide? Let our AI plan your perfect trip!</p>
+                <button class="btn btn-success"> <a href="gemini.html" style="display: flex; align-items: center; gap: 5px; text-decoration: none; color: rgb(9, 62, 102);"
+                  > Make A Travel Plan!</a
+                ></button>
               </div>
             </div>
           </div>
@@ -117,261 +130,15 @@
             <div class="card h-100 under-hero-section weather-alerts">
               <div class="card-body text-center">
                 <h2 class="card-title">Weather Alerts</h2>
-                <div class="weather-alerts-content">
+                <div class="weather-alerts-content"> -->
                 <!-- <button class="btn btn-danger">View Alerts</button> -->
-              </div>
+              <!-- </div>
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
     <!-- Gemini Section -->
-    <section id="gemini" class="gemini-section">
-      <div class="container">
-        <h2 class="section-title">
-          Ask Explore AI for Your Personalized Itinerary
-        </h2>
-        <p class="text-center mb-5">
-          Enter your travel details and let our AI assistant create the perfect
-          roadmap for your Darjeeling trip
-        </p>
-
-        <div class="gemini-card">
-          <div class="text-center">
-            <div class="gemini-icon">
-              <i class="fas fa-robot"></i>
-            </div>
-            <h3>Plan Your Trip</h3>
-            <p class="mb-4">
-              Fill in your details to get a customized travel plan
-            </p>
-          </div>
-
-          <form id="itineraryForm">
-            <div class="row mb-3">
-              <div class="col-12">
-                <label class="form-label">Choose Destination(s):</label>
-                <div id="destination-options" class="mt-2">
-                  <div class="form-check mb-2">
-                    <input
-                      class="form-check-input destination-chk"
-                      type="checkbox"
-                      value="Darjeeling"
-                      id="dest_darjeeling"
-                    />
-                    <label class="form-check-label" for="dest_darjeeling">
-                      Darjeeling
-                    </label>
-                  </div>
-
-                  <div class="form-check mb-2">
-                    <input
-                      class="form-check-input destination-chk"
-                      type="checkbox"
-                      value="Kalimpong"
-                      id="dest_kalimpong"
-                    />
-                    <label class="form-check-label" for="dest_kalimpong">
-                      Kalimpong
-                    </label>
-                  </div>
-
-                  <div class="form-check mb-2">
-                    <input
-                      class="form-check-input destination-chk"
-                      type="checkbox"
-                      value="Dooars"
-                      id="dest_dooars"
-                    />
-                    <label class="form-check-label" for="dest_dooars">
-                      Dooars (Jaldapara/Gorumara)
-                    </label>
-                  </div>
-
-                  <div class="form-check mb-2">
-                    <input
-                      class="form-check-input destination-chk"
-                      type="checkbox"
-                      value="Siliguri"
-                      id="dest_siliguri"
-                    />
-                    <label class="form-check-label" for="dest_siliguri">
-                      Siliguri
-                    </label>
-                  </div>
-
-                  <div class="form-check mb-2">
-                    <input
-                      class="form-check-input destination-chk"
-                      type="checkbox"
-                      value="Mirik"
-                      id="dest_mirik"
-                    />
-                    <label class="form-check-label" for="dest_mirik">
-                      Mirik
-                    </label>
-                  </div>
-
-                  <div class="form-check mb-2">
-                    <input
-                      class="form-check-input destination-chk"
-                      type="checkbox"
-                      value="LavaLolegaon"
-                      id="dest_lava_lolegaon"
-                    />
-                    <label class="form-check-label" for="dest_lava_lolegaon">
-                      Lava / Lolegaon / Rishop
-                    </label>
-                  </div>
-
-                  <div class="form-check mb-2">
-                    <input
-                      class="form-check-input destination-chk"
-                      type="checkbox"
-                      value="Sandakphu"
-                      id="dest_sandakphu"
-                    />
-                    <label class="form-check-label" for="dest_sandakphu">
-                      Sandakphu / Phalut (Trekking)
-                    </label>
-                  </div>
-
-                  <div class="form-check mb-2">
-                    <input
-                      class="form-check-input destination-chk"
-                      type="checkbox"
-                      value="NorthBengalGeneral"
-                      id="dest_general"
-                    />
-                    <label class="form-check-label" for="dest_general">
-                      General North Bengal (Multiple places)
-                    </label>
-                  </div>
-
-                  <div class="form-check mb-2">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      value="Other"
-                      id="dest_other_chk"
-                    />
-                    <label class="form-check-label" for="dest_other_chk">
-                      Other (Please specify)
-                    </label>
-                  </div>
-
-                  <div
-                    id="other_destination_wrapper"
-                    class="mt-2"
-                    style="display: none"
-                  >
-                    <input
-                      type="text"
-                      class="form-control form-control-sm"
-                      id="dest_other_text"
-                      placeholder="Enter other destination(s)"
-                    />
-                  </div>
-                </div>
-                <small class="form-text text-muted mt-2 d-block"
-                  >Select all the places you're interested in visiting.</small
-                >
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <label for="startDate" class="form-label">Arrival Date</label>
-                <input
-                  type="date"
-                  class="form-control"
-                  id="startDate"
-                  required
-                />
-              </div>
-              <div class="col-md-6">
-                <label for="endDate" class="form-label">Departure Date</label>
-                <input type="date" class="form-control" id="endDate" required />
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6">
-                <label for="travelers" class="form-label"
-                  >Number of Travelers</label
-                >
-                <select class="form-select" id="travelers">
-                  <option value="1">1 person</option>
-                  <option value="2" selected>2 people</option>
-                  <option value="3">3 people</option>
-                  <option value="4">4 people</option>
-                  <option value="5+">5+ people</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <label for="interest" class="form-label">Main Interest</label>
-                <select class="form-select" id="interest">
-                  <option value="general">General Sightseeing</option>
-                  <option value="adventure">Adventure & Trekking</option>
-                  <option value="culture">Culture & Heritage</option>
-                  <option value="nature">Nature & Wildlife</option>
-                  <option value="relaxation">Relaxation & Tea Tourism</option>
-                </select>
-              </div>
-            </div>
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <label for="age-group" class="form-label">Age Group:</label>
-                <select class="form-control" id="age-group" name="age-group">
-                  <option value="">Select Age Group</option>
-                  <option value="18-25">18-25</option>
-                  <option value="26-35">26-35</option>
-                  <option value="36-50">36-50</option>
-                  <option value="50+">50+</option>
-                  <option value="family-kids">Family with Kids</option>
-                  <option value="group">Group (Friends/Colleagues)</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <label for="budget" class="form-label">Budget (in INR):</label>
-                <input type="number" class="form-control" id="budget" name="budget" min="0" placeholder="e.g., 50000">
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="specialRequests" class="form-label"
-                >Special Requests (Optional)</label
-              >
-              <textarea
-                class="form-control"
-                id="specialRequests"
-                rows="3"
-                placeholder="E.g. Senior travelers, food preferences, accessibility needs, etc."
-              ></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-gemini">
-              <i class="fas fa-magic me-2"></i> Generate My Itinerary
-            </button>
-
-            <div
-              class="spinner-border text-primary"
-              role="status"
-              id="loadingSpinner"
-            >
-              <span class="visually-hidden">Loading...</span>
-            </div>
-          </form>
-
-          <div class="itinerary-result" id="itineraryResult">
-            <h4><i class="fas fa-map me-2"></i> Your North Bengal Itinerary</h4>
-            <div id="itineraryContent"></div>
-            <button class="download-btn" id="downloadBtn">
-              <i class="fas fa-download me-2"></i> Download as PDF
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
 
 
  <!-- Header Card Section -->
@@ -513,7 +280,7 @@
     </section>
 
     <!-- Partner Rental Section -->
-    <section id="partners" class="py-5">
+    <!-- <section id="partners" class="py-5">
       <div class="container">
         <div class="partner-section">
           <h2 class="partner-title">
@@ -649,7 +416,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
    <!-- Feedback Preview Section -->
 <section id="feedback-preview" class="container mt-5 mb-5">
     <div class="card shadow-lg p-4 border-0 rounded-4 text-center" style="background: #f9f9f9;">
@@ -666,16 +433,15 @@
   </section>
   
 
-    <!-- Footer -->
-    <footer class="footer">
+     <!-- Footer -->
+     <footer class="footer">
       <div class="container">
         <div class="row">
           <div class="col-lg-4 mb-4">
-            <h5>Darjeeling Travel Guide</h5>
+            <h5>North Bengal Guides</h5>
             <p>
-              Your complete guide to exploring the Queen of the Hills. Find the
-              best places to visit, eat, stay and emergency contacts for a safe
-              and memorable trip.
+              Connecting travelers with knowledgeable local guides for authentic
+              Himalayan experiences.
             </p>
             <div class="social-icons mt-3">
               <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -688,47 +454,48 @@
             <h5>Quick Links</h5>
             <ul class="footer-links">
               <li><a href="index.html">Home</a></li>
-              <li><a href="places.html">Places to Visit</a></li>
-              <li><a href="food.html">Local Cuisine</a></li>
-              <li><a href="hotels.html">Hotels & Stays</a></li>
-              <li><a href="guides.html">Tour Guides</a></li>
+              <li><a href="places.html">Places</a></li>
+              <li><a href="guides.html">Book Guides</a></li>
+              <li><a href="become-guide.html">Become Guide</a></li>
+              <li><a href="emergency.html">Emergency</a></li>
             </ul>
           </div>
           <div class="col-lg-3 col-md-6 mb-4">
-            <h5>Emergency Services</h5>
+            <h5>For Guides</h5>
             <ul class="footer-links">
-              <li><a href="emergency.html">Hospitals</a></li>
-              <li><a href="emergency.html">Police Stations</a></li>
-              <li><a href="emergency.html">Ambulance Services</a></li>
-              <li><a href="emergency.html">Tourist Police</a></li>
-              <li><a href="emergency.html">Helpline Numbers</a></li>
+              <li><a href="#">Application Process</a></li>
+              <li><a href="#">Guide Resources</a></li>
+              <li><a href="#">Training Programs</a></li>
+              <li><a href="#">Community Forum</a></li>
+              <li><a href="#">Guide Dashboard</a></li>
             </ul>
           </div>
           <div class="col-lg-3 mb-4">
-            <h5>Contact Info</h5>
+            <h5>Contact Us</h5>
             <ul class="footer-links">
               <li>
-                <i class="fas fa-map-marker-alt me-2"></i> Darjeeling, West
+                <i class="fas fa-map-marker-alt me-2"></i> Siliguri, West
                 Bengal, India
               </li>
               <li>
-                <i class="fas fa-phone me-2"></i> Tourist Helpline:
-                <a href="tel:1363">1363</a>
+                <i class="fas fa-phone me-2"></i>
+                <a href="tel:+919876543210">+91 98765 43210</a>
               </li>
               <li>
                 <i class="fas fa-envelope me-2"></i>
-                <a href="mailto:info@darjeelingguide.com"
-                  >info@darjeelingguide.com</a
+                <a href="mailto:info@darjeelingguides.com"
+                  >info@explorenb.com</a
                 >
               </li>
-              <li><i class="fas fa-clock me-2"></i> Support: 24/7 Emergency</li>
+              <li>
+                <i class="fas fa-clock me-2"></i> Support: 9AM-6PM (Sun-Sat)
+              </li>
             </ul>
           </div>
         </div>
         <div class="copyright">
           <p class="mb-0">
-            &copy; 2023 Darjeeling Travel Guide. All rights reserved. | Designed
-            with <i class="fas fa-heart text-danger"></i> for travelers
+            &copy; 2025 Explore NB. All rights reserved.
           </p>
         </div>
       </div>
@@ -745,7 +512,7 @@
       window.GoogleGenerativeAI = GoogleGenerativeAI; // Make it globally accessible
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </body>

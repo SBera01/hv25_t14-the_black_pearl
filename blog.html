@@ -20,81 +20,9 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/style.css" />
-    <style>
-        .vlog-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-            color: #333;
-        }
-        
-        .destination-section {
-            margin-bottom: 60px;
-        }
-        
-        .destination-title {
-            font-size: 1.8rem;
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .vlog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        
-        .video-card {
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .video-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .video-thumbnail {
-            position: relative;
-            padding-top: 56.25%; /* 16:9 aspect ratio */
-            overflow: hidden;
-        }
-        
-        .video-thumbnail iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .video-info {
-            padding: 15px;
-        }
-        
-        .video-title {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            color: #2c3e50;
-        }
-        
-        .video-creator {
-            font-size: 0.9rem;
-            color: #7f8c8d;
-        }
-    </style>
+    <!-- <link rel="stylesheet" href="./css/style.css" /> -->
+    <link rel="stylesheet" href="blog.css" />
+
 
   </head>
   <body>
@@ -104,7 +32,7 @@
       <div class="container">
         <a
           class="navbar-brand"
-          href="#"
+          href="index.html"
           style="display: flex; align-items: center; gap: 5px"
         >
           <img src="/logo2.png" alt="Logo" style="height: 40px" />
@@ -140,8 +68,8 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/about.html">
-                <i class="fas fa-info-circle me-1"></i> About Us
+              <a class="nav-link" href="/community.html">
+                <i class="fas fa-info-circle me-1"></i> Community
               </a>
             </li>
             <li class="nav-item">
@@ -161,123 +89,277 @@
 
     <!---hero section-->
         <!-- Hero Section -->
-        <section class="guide-hero">
-            <div class="container">
-              <h1 class="display-4 fw-bold mb-4">Publish Your Blog Here</h1>
-              <p class="lead mb-5">
-                Share your knowledge of Darjeeling and North Bengal with travelers
-                from around the world and earn money doing what you love
-              </p>
-              <a href="#" class="btn btn-warning btn-lg px-4"
-                ><i class="fas fa-user-check me-2"></i> Share Your Blogs</a
-              >
-            </div>
-          </section>
-      
-
-   
-             
-      
 
 
 
+          <!---diaries-->
+
+
+
+
+          <header class="blog-header">
+            <h1>North Bengal Travel Diaries</h1>
+            <p>Share your journey and help fellow travelers explore North Bengal</p>
+        </header>
+    
+        <div class="container">
+            <!-- Blog Post 1 -->
+            <div class="post-container">
+                <div class="post-header">
+                    <img src="https://www.shutterstock.com/image-photo/young-male-hipster-traveler-doing-260nw-622054616.jpg" alt="User" class="user-avatar">
+                    <div>
+                        <h3>Adventurous Rahul</h3>
+                        <p>Posted on: 15 March 2024</p>
+                    </div>
                 </div>
+                
+                <div class="post-images">
+                    <img src="https://dynamic.tourtravelworld.com/package-images/photo-big/dir_52/1532054/376075.jpg" class="post-image" alt="Kalimpong">
+                </div>
+    
+                <div class="post-content">
+                    <h2 class="post-title">Monsoon Magic in Darjeeling-Kalimpong</h2>
+                    <p class="post-location">📍 Darjeeling, Kalimpong</p>
+                    <p>Exploring the tea gardens and mountain trails during the monsoon season...</p>
+                </div>
+    
+                <div class="interaction-buttons">
+                    <button class="btn like-btn" onclick="toggleLike(this)">
+                        <i class="far fa-heart"></i>
+                        <span class="like-count">245</span>
+                    </button>
+                    <button class="btn comment-btn">
+                        <i class="far fa-comment"></i> 45
+                    </button>
+                    <button class="btn share-btn" onclick="sharePost()">
+                        <i class="fas fa-share"></i>
+                    </button>
+                    <button class="btn save-btn" onclick="toggleSave(this)">
+                        <i class="far fa-bookmark"></i>
+                    </button>
+                </div>
+    
+                <div class="comments-section">
+                    <div class="comment">
+                        <strong>Traveler123:</strong> Great photos! How were the road conditions?
+                    </div>
+                    <input type="text" class="comment-input" placeholder="Add a comment...">
+                </div>
+            </div>
+    
+            <!-- More posts can be added similarly -->
+
+
+              <!-- Post 1: Photo Diary -->
+              <div class="post-container photo-post">
+                  <div class="post-header">
+                      <img src="https://st3.depositphotos.com/1852855/15265/i/450/depositphotos_152658420-stock-photo-happy-young-woman-tourist-doing.jpg" class="user-avatar" alt="Sneha">
+                      <div>
+                          <h3>Wanderlust Sneha</h3>
+                          <p>Posted: 2 hours ago • <i class="fas fa-camera"></i> Photo Diary</p>
+                      </div>
+                  </div>
+                  <div class="post-images">
+                      <img src="https://media1.thrillophilia.com/filestore/qttjqyezbsenv84vi6wf26i47y12_sepoy%20dhura%20tea%20garden%20siliguri.jpg" class="post-image active-image" alt="Tea Garden">
+                      <img src="https://bhuvan-app1.nrsc.gov.in/tea/teaPortal/assam-tea-plantations.jpg" class="post-image" alt="Sunrise">
+                  </div>
+                  <div class="post-content">
+                      <h2 class="post-title">Mornings in Makaibari Tea Estate</h2>
+                      <p class="post-location">📍 Kurseong</p>
+                      <p>Golden hour magic in Asia's oldest tea estate ☕️ #PlantationDays</p>
+                  </div>
+                  <!-- Interaction buttons same as before -->
+              </div>
+          
+              <!-- Post 2: Travel Guide -->
+              <div class="post-container guide-post">
+                  <div class="post-header">
+                      <img src="user3.jpg" class="user-avatar" alt="Raj">
+                      <div>
+                          <h3>Backpacker Raj</h3>
+                          <p>Posted: 1 day ago • <i class="fas fa-map"></i> Travel Guide</p>
+                      </div>
+                  </div>
+                  <div class="post-content">
+                      <h2 class="post-title">Dooars Forest Route (7-Day Itinerary)</h2>
+                      <p class="post-location">📍 Dooars Region</p>
+                      <p>📌 Day 1: Arrive at New Mal Junction<br>
+                         🏨 Stay: Murti Forest Bungalow<br>
+                         🐘 Day 2: Gorumara National Park Safari...<br>
+                         <button class="itinerary-btn">Show Full Itinerary</button>
+                      </p>
+                  </div>
+                  <!-- Interaction buttons -->
+              </div>
+          
+              <!-- Post 3: Story Time -->
+              <div class="post-container story-post">
+                  <div class="post-header">
+                      <img src="user4.jpg" class="user-avatar" alt="Priya">
+                      <div>
+                          <h3>Priya's Himalayan Tales</h3>
+                          <p>Posted: 3 days ago • <i class="fas fa-book-open"></i> Travel Story</p>
+                      </div>
+                  </div>
+                  <div class="post-content">
+                      <h2 class="post-title">When I Got Lost Near Singalila Ridge</h2>
+                      <p class="post-location">📍 Singalila National Park</p>
+                      <p>"The fog rolled in suddenly, swallowing the trail whole..."<br>
+                      [Read More]</p>
+                  </div>
+                  <!-- Interaction buttons -->
+              </div>
+          
+              <!-- Post 4: Video Blog -->
+              <div class="post-container vlog-post">
+                  <div class="post-header">
+                      <img src="https://www.youtube.com/embed/nUHhkuTjPx0" class="user-avatar" alt="Arjun">
+                      <div>
+                          <h3>Bike Rider Arjun</h3>
+                          <p>Posted: 5 days ago • <i class="fas fa-video"></i> Travel Vlog</p>
+                      </div>
+                  </div>
+                  <div class="post-images">
+                      <video class="post-image active-image" controls>
+                          <source src="https://www.youtube.com/embed/nUHhkuTjPx0" type="video/mp4">
+                      </video>
+                  </div>
+                  <div class="post-content">
+                      <h2 class="post-title">Royal Enfield Ride: Siliguri to Lava</h2>
+                      <p class="post-location">📍 NH55 Highway</p>
+                      <p>Full biking experience through mountain roads 🏍️</p>
+                  </div>
+                  <!-- Interaction buttons -->
+              </div>
+          
+              <!-- Post 5: Food Journey -->
+              <div class="post-container food-post">
+                  <div class="post-header">
+                      <img src="user6.jpg" class="user-avatar" alt="Ananya">
+                      <div>
+                          <h3>Foodie Ananya</h3>
+                          <p>Posted: 1 week ago • <i class="fas fa-utensils"></i> Food Trail</p>
+                      </div>
+                  </div>
+                  <div class="post-images">
+                      <div class="food-grid">
+                          <img src="thukpa.jpg" alt="Thukpa">
+                          <img src="momo.jpg" alt="Momos">
+                          <img src="churpee.jpg" alt="Churpee">
+                      </div>
+                  </div>
+                  <div class="post-content">
+                      <h2 class="post-title">North Bengal's Hidden Food Gems</h2>
+                      <p class="post-location">📍 Kalimpong Market</p>
+                      <p>1. Tibetan Thukpa at Dekevas Restaurant 🌟<br>
+                         2. Fresh Steamed Momos near Durpin Monastery...</p>
+                  </div>
+                  <!-- Interaction buttons -->
+              </div>
+          
+              <!-- Add 5 more posts following similar patterns -->
+          
+              <!-- Post 6: Festival Experience -->
+              <!-- Post 7: Homestay Review -->
+              <!-- Post 8: Wildlife Encounter -->
+              <!-- Post 9: Trekking Adventure -->
+              <!-- Post 10: Family Travel Tips -->
+          
+          </div>
+       
+
+
+
+
+
+
+  
+    <!---end of navbar section-->
+    <!-- <div class="vlog-container">
+        <h1 class="section-title">Travel Vlogs</h1>
+         -->
+        <!-- darjeeling Destination -->
+        <div class="destination-section">
+            <h2 class="destination-title">Darjeeling</h2>
+            <div class="vlog-grid">
+                <!-- Video Card 1 -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                      <iframe width="704" height="396" src="https://www.youtube.com/embed/XYwP-QndGG0" title="Darjeeling: Most Beautiful Place in West Bengal | India&#39;s Highest Toy Train | Kanchenjunga View" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">
+                          Darjeeling: Most Beautiful Place in West Bengal | India's Highest Toy Train | Kanchenjunga View</h3>
+                        <p class="video-creator">Kanishk Gupta</p>
+                    </div>
+                </div>
+                
+                
+                <!-- Video Card 2 -->
+
+                
+                <!-- Video Card 3 -->
+                
+                <div class="video-card">
+                  <div class="video-thumbnail">
+                    <iframe width="400" height="225" src="https://www.youtube.com/embed/nb-kdtjWoJ0" title="Darjeeling Vlog - 48 Hours In Darjeeling - Where To Eat, Stay &amp; What To See | Ep 3 | Jinal Inamdar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
+                  <div class="video-info">
+                      <h3 class="video-title">Darjeeling Vlog - 48 Hours In Darjeeling </h3>
+                      <p class="video-creator">Talkin Travel</p>
+                  </div>
               </div>
             </div>
-          </section>
-    <!---end of navbar section-->
-    <div class="vlog-container">
-        <h1 class="section-title">Travel Vlogs</h1>
+        </div>
         
-        <!-- Bali Destination -->
+        <!-- Gangtok Destination -->
         <div class="destination-section">
-            <h2 class="destination-title">Bali, Indonesia</h2>
+            <h2 class="destination-title">Gangtok</h2>
             <div class="vlog-grid">
                 <!-- Video Card 1 -->
                 <div class="video-card">
-                    <div class="video-thumbnail">
-                        <iframe src="https://www.youtube.com/embed/6s0r6QZq6k4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+                  <div class="video-thumbnail">
+                    <iframe width="705" height="397" src="https://www.youtube.com/embed/WwNZqNUHeUA" title="GANGTOK, SIKKIM TRAVEL VLOG | Things to do in Gangtok - Vlog #4 | North East India | Kritika Goel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+                  </div>   
                     <div class="video-info">
-                        <h3 class="video-title">BALI TRAVEL GUIDE: 10 Best Places to Visit</h3>
-                        <p class="video-creator">The Planet D</p>
-                    </div>
-                </div>
+                      <h3 class="video-title">| GANGTOK, SIKKIM TRAVEL VLOG  | Gangtok Tour Full Information By MSVlogger</h3>
+                      <p class="video-creator">MS Vlogger</p>
+                      </div>
                 
+                </div>
                 <!-- Video Card 2 -->
                 <div class="video-card">
                     <div class="video-thumbnail">
-                        <iframe src="https://www.youtube.com/embed/CM4YDarv0wE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+                      <iframe width="705" height="396" src="https://www.youtube.com/embed/DzMIODGazaQ" title="GANGTOK&#39;s Best: Food, Cafes &amp; More | Traveling Mondays : Sikkim Travel Series" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>   
+                         </div>
                     <div class="video-info">
-                        <h3 class="video-title">Bali in 8K ULTRA HD - Relaxing Music Along With Beautiful Nature</h3>
-                        <p class="video-creator">8K VIDEOS ULTRA HD</p>
+                        <h3 class="video-title">GANGTOK's Best: Food, Cafes & More</h3>
+                        <p class="video-creator">Traveling Mondays</p>
                     </div>
                 </div>
                 
                 <!-- Video Card 3 -->
                 <div class="video-card">
                     <div class="video-thumbnail">
-                        <iframe src="https://www.youtube.com/embed/ooX1z4x19w4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+                      <iframe width="705" height="397" src="https://www.youtube.com/embed/szdb5k40Lps" title="Gangtok and Darjeeling vlog (Part 1)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
                     <div class="video-info">
-                        <h3 class="video-title">BALI: 3 Week Itinerary - Best Things To Do</h3>
-                        <p class="video-creator">Eva zu Beck</p>
+                        <h3 class="video-title">Gangtok Vlog</h3>
+                        <p class="video-creator">Prince Sri Dash</p>
                     </div>
                 </div>
-            </div>
+           </div>
         </div>
         
-        <!-- Japan Destination -->
+        <!--Mirik Destination -->
         <div class="destination-section">
-            <h2 class="destination-title">Japan</h2>
+            <h2 class="destination-title">Mirik</h2>
             <div class="vlog-grid">
                 <!-- Video Card 1 -->
                 <div class="video-card">
                     <div class="video-thumbnail">
-                        <iframe src="https://www.youtube.com/embed/ailHY7YjY0A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+                      <iframe width="704" height="396" src="https://www.youtube.com/embed/ilCszSQxv2M" title="MUMBAI TO MIRIK / West Bengal / Darjeeling Offbeat Destination / @amairaresortfarms  Day-1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
                     <div class="video-info">
-                        <h3 class="video-title">Japan Travel Guide - Best Places to Visit</h3>
-                        <p class="video-creator">Ryan Shirley</p>
-                    </div>
-                </div>
-                
-                <!-- Video Card 2 -->
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <iframe src="https://www.youtube.com/embed/rcm3hdc8X6w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title">10 Days in Japan: A Complete Travel Itinerary</h3>
-                        <p class="video-creator">Paolo fromTOKYO</p>
-                    </div>
-                </div>
-                
-                <!-- Video Card 3 -->
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <iframe src="https://www.youtube.com/embed/3NaRuvZq7XQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title">Japan's Hidden Gems: Off the Beaten Path</h3>
-                        <p class="video-creator">Abroad in Japan</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Paris Destination -->
-        <div class="destination-section">
-            <h2 class="destination-title">Paris, France</h2>
-            <div class="vlog-grid">
-                <!-- Video Card 1 -->
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <iframe src="https://www.youtube.com/embed/QbJKr1S5XTQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title">Paris in 4K - The City of Love</h3>
+                        <h3 class="video-title">
+                          MUMBAI TO MIRIK / West Bengal / Darjeeling Offbeat Destination</h3>
                         <p class="video-creator">Around The World 4K</p>
                     </div>
                 </div>
@@ -285,10 +367,9 @@
                 <!-- Video Card 2 -->
                 <div class="video-card">
                     <div class="video-thumbnail">
-                        <iframe src="https://www.youtube.com/embed/Vl4nN2lW5mY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+                      <iframe width="704" height="396" src="https://www.youtube.com/embed/ZKFHrndXKp8" title="Mirik, Darjeeling Complete Travel Guide | Places to visit in Mirik | By Heena Bhatia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
                     <div class="video-info">
-                        <h3 class="video-title">How to Spend 3 Days in PARIS</h3>
+                        <h3 class="video-title">Mirik Complete Travel Guide</h3>
                         <p class="video-creator">Travel Spots</p>
                     </div>
                 </div>
@@ -296,15 +377,66 @@
                 <!-- Video Card 3 -->
                 <div class="video-card">
                     <div class="video-thumbnail">
-                        <iframe src="https://www.youtube.com/embed/zdQmuBbZ_7E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+                      <iframe width="704" height="396" src="https://www.youtube.com/embed/nUHhkuTjPx0" title="SILIGURI TO MIRIK - Never Seen Mirik So Beautiful Before" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
                     <div class="video-info">
-                        <h3 class="video-title">Hidden Paris: Secret Spots Most Tourists Miss</h3>
-                        <p class="video-creator">The New Travel</p>
+                        <h3 class="video-title">SILIGURI TO MIRIK- Never senn mirik so beautiful before</h3>
+                        <p class="video-creator">Biker NILADRI</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+    
+    
+      </div>
+
+
+
+
+
+    <script>
+      function toggleLike(btn) {
+          btn.classList.toggle('liked');
+          const icon = btn.querySelector('i');
+          const count = btn.querySelector('.like-count');
+          
+          if(btn.classList.contains('liked')) {
+              icon.classList.replace('far', 'fas');
+              count.textContent = parseInt(count.textContent) + 1;
+          } else {
+              icon.classList.replace('fas', 'far');
+              count.textContent = parseInt(count.textContent) - 1;
+          }
+      }
+
+      function toggleSave(btn) {
+          btn.classList.toggle('saved');
+          const icon = btn.querySelector('i');
+          icon.classList.toggle('far');
+          icon.classList.toggle('fas');
+      }
+
+      function sharePost() {
+          if(navigator.share) {
+              navigator.share({
+                  title: 'North Bengal Travel Diary',
+                  text: 'Check out this amazing travel post from North Bengal!',
+                  url: window.location.href
+              });
+          } else {
+              alert('Sharing is not supported in your browser');
+          }
+      }
+
+      // Image slider functionality
+      // let currentImageIndex = 0;
+      // const images = document.querySelectorAll('.post-image');
+      
+      // setInterval(() => {
+      //     images[currentImageIndex].classList.remove('active-image');
+      //     currentImageIndex = (currentImageIndex + 1) % images.length;
+      //     images[currentImageIndex].classList.add('active-image');
+      // }, 1000);
+  </script>
 </body>
 </html>
